@@ -22,7 +22,3 @@ var rotate = function (nums, k) {
 };
 
 console.log(rotate(arr, 3));
-
-db.listingsAndReviews.find({
-  $and: [{ accommodates: { $gt: 6 } }, { amenities: { $size: 50 } }],
-});
