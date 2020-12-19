@@ -69,11 +69,12 @@ const isValidSudoku = function (board) {
       return true;
     };
 
-    const isLeftValid = isValidSquare(onlyNumbersLeft);
-    const isMidValid = isValidSquare(onlyNumbersMid);
-    const isRightValid = isValidSquare(onlyNumbersRight);
-
-    if (!isLeftValid || !isMidValid || !isRightValid) return false;
+    if (
+      !isValidSquare(onlyNumbersLeft) ||
+      !isValidSquare(onlyNumbersMid) ||
+      !isValidSquare(onlyNumbersRight)
+    )
+      return false;
   }
 
   return true;
