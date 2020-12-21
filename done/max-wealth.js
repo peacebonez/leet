@@ -1,9 +1,9 @@
 const maximumWealth = function (accounts) {
-  return accounts
-    .map((account) => {
+  return Math.max(
+    ...accounts.map((account) => {
       return account.reduce((acc, cur) => acc + cur);
     })
-    .sort((a, b) => b - a)[0];
+  );
 };
 
 console.log(

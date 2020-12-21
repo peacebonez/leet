@@ -1,20 +1,23 @@
 const isValidSudoku = function (board) {
-  let rows = {};
-  let columns = {};
+  let rows = [];
+  let columns = [];
+
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
       let curSquare = board[i][j];
       if (curSquare === ".") continue;
-      if (!columns[j]) columns[j] = [];
 
-      if (rows.hasOwnProperty(curSquare) || columns[j].includes(curSquare)) {
-        return false;
-      } else {
-        rows[curSquare] = j;
-        columns[j].push(curSquare);
-      }
+      //HANDLE ROWS
+      if (!rows[i]) rows[i] = {};
+      if (!rows[i][curSquare]) rows[i] = { ...rows[i], [curSquare]: true };
+      else return false;
+
+      //HANDLE COLUMNS
+      if (!columns[j]) columns[j] = {};
+      if (!columns[j][curSquare])
+        columns[j] = { ...columns[j], [curSquare]: true };
+      else return false;
     }
-    rows = {};
   }
 
   const dotStripper = (obj) => {
