@@ -30,9 +30,10 @@ const hourGlassSum = (arr) => {
         arr[x + 2][y + 1] +
         arr[x + 2][y + 2];
       if (curSum > max) max = curSum;
-      console.log("curSum:", curSum);
     }
   }
   return max;
 };
 console.log(hourGlassSum(neg));
+
+arr.filter((i) => i && i);
