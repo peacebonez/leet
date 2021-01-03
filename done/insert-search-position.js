@@ -1,8 +1,3 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
- */
 const searchInsert = (nums, target) => {
   if (nums.indexOf(target) > -1) return nums.indexOf(target);
 
