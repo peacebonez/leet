@@ -1,9 +1,35 @@
-const longestCommonPrefix = (strs) => {};
+const longestCommonPrefix = (strs) => {
+  const tree = { "": {} };
 
-// console.log(longestCommonPrefix(["a"]));
+  let longestPrefix = "";
+
+  for (let str of strs) {
+    console.log("tree:", tree);
+
+    let root = tree[""]; //setting root to current tree empty string value
+    let curPrefix = "";
+    for (let char of str) {
+      console.log("longestPrefix:", longestPrefix);
+      if (root[char]) {
+        //if root contains current char
+        root = root[char];
+        curPrefix += char;
+      }
+      //not a common prefix
+      else {
+        if (curPrefix.length > longestPrefix.length) {
+          longestPrefix = curPrefix;
+        }
+        root[char] = {};
+        root = root[char];
+      }
+    }
+  }
+  return longestPrefix;
+};
+
 // console.log(longestCommonPrefix(["ab", "a"]));
-console.log(longestCommonPrefix(["flow", "flower", "flight", "fluid"]));
-// console.log(longestCommonPrefix(["flower", "flower", "flower", "flower"]));
+console.log(longestCommonPrefix(["flower", "flower", "flower", "flower"]));
 
 // const longestCommonPrefix = (strs) => {
 //     if (strs.length === 1) return strs[0][0];
