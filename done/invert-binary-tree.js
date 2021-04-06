@@ -7,4 +7,16 @@ function TreeNode(val, left, right) {
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function (root) {};
+const invertTree = (root) => {
+  if (!root) return root
+  
+  let temp = root.left;
+  root.left = root.right;
+  root.right = temp
+  
+  invertTree(root.left)
+  invertTree(root.right)
+  console.log('root:', root)
+  return root
+}
+
