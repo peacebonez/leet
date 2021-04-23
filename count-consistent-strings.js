@@ -14,15 +14,5 @@ var countConsistentStrings = function (allowed, words) {
   return count
 }
 
-// var countConsistentStrings = function (allowed, words) {
-//   let count = 0
-//   for (let i = 0; i < words.length; i++) {
-//     for (let h = 0; h < words[i].length; h++) {
-//       if (!allowed.includes(words[i][h])) break
-//       if (h === words[i].length - 1) count++
-//     }
-//   }
-//   return count
-// }
 
 console.log(countConsistentStrings("ab", ["ad", "bd", "aaab", "baa", "badab"]))
