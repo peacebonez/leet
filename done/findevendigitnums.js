@@ -4,9 +4,9 @@
  * @param {number[]} nums
  * @return {number}
  */
-var findNumbers = function (nums) {
+const findNumbers = function (nums) {
   return nums
-    .map((num) => num.toString().split("").length)
+    .map((num) => num.toString().length)
     .filter((digitLength) => digitLength % 2 === 0).length
 }
 
