@@ -2,13 +2,9 @@ function findTriplets(array) {
   if (array.length < 3) return false
 
   for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length; j++) {
-      if (j === i) continue
-      for (let k = 0; k < array.length; k++) {
-        if (k === i || k === j) continue
-        const sum = array[i] + array[j] + array[k]
-
-        if (sum === 0) return true
+    for (let j = i + 1; j < array.length; j++) {
+      for (let k = j + 1; k < array.length; k++) {
+        if (array[i] + array[j] + array[k] === 0) return true
       }
     }
   }
