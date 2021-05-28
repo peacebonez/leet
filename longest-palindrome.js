@@ -15,9 +15,6 @@ const longestPalindrome = function (s) {
   return leader
 }
 
-// const isPalindrome = (str) =>
-//   str.toLowerCase() === str.toLowerCase().split("").reverse("").join("")
-
 const isPalindrome = (str) => {
   str = str.toLowerCase()
   for (
@@ -29,6 +26,9 @@ const isPalindrome = (str) => {
   }
   return true
 }
+
+// const isPalindrome = (str) =>
+//   str.toLowerCase() === str.toLowerCase().split("").reverse("").join("")
 
 // console.log(longestPalindrome("ac"))
 console.log(
